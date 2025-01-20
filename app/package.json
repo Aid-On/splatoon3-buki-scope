@@ -1,0 +1,62 @@
+{
+  "name": "rody-splatoon3-buki-scope",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "reinstall": "yarn clear ; yarn",
+    "dev": "yarn set-local-git-commit-hash && next dev",
+    "dev:ip": "yarn set-local-git-commit-hash && next dev -H $(ipconfig getifaddr en0)",
+    "clear": "yarn cache clean && rm -rf .next && rm -rf node_modules",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "set-local-git-commit-hash": "cross-env NEXT_PUBLIC_GIT_COMMIT_HASH=$(git rev-parse HEAD) next",
+    "create-local-env": "node scripts/create-local-env.js"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/noto-sans-jp": "^5.0.18",
+    "@svgr/webpack": "^8.1.0",
+    "chakra-ui-markdown-renderer": "^4.1.0",
+    "firebase": "^10.8.0",
+    "framer-motion": "^11.0.6",
+    "lottie-react": "^2.4.0",
+    "lucide-react": "^0.453.0",
+    "next": "14.1.0",
+    "path-browserify": "^1.0.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^8.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/xlsx": "^0.0.36",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
+    "autoprefixer": "^10.4.20",
+    "cross-env": "^7.0.3",
+    "eslint": "^8",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "jest": "^29.7.0",
+    "postcss": "^8.4.47",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.13",
+    "ts-jest": "^29.2.3",
+    "typescript": "^5"
+  },
+  "resolutions": {
+    "undici": "5.28.4"
+  }
+}

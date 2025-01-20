@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "rody-splatoon3-buki-scope",
+    "dev": "rody-splatoon3-buki-scope"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
