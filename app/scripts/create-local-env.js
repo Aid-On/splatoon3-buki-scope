@@ -22,9 +22,6 @@ async function createEnvFile() {
     // NEXT_PUBLIC_GCP_PROJECT_IDをユーザーから入力として取得
     const gcpProjectId = await getUserInput("Enter NEXT_PUBLIC_GCP_PROJECT_ID: ");
 
-    // NEXT_PUBLIC_OPENAI_API_KEYをユーザーから入力として取得
-    const openaiApiKey = await getUserInput("Enter NEXT_PUBLIC_OPENAI_API_KEY: ");
-
     // NEXT_PUBLIC_GCP_REGIONを設定（必要に応じて変更）
     const gcpRegion = "asia-northeast1";
 
@@ -43,7 +40,7 @@ async function createEnvFile() {
       const firebaseConfigString = JSON.stringify(firebaseConfig);
 
       // .env.localファイルに環境変数を書き込む
-      const envContent = `NEXT_PUBLIC_FIREBASE_CONFIG=${firebaseConfigString}\nNEXT_PUBLIC_GCP_PROJECT_ID=${gcpProjectId}\nNEXT_PUBLIC_GCP_REGION=${gcpRegion}\nNEXT_PUBLIC_OPENAI_API_KEY=${openaiApiKey}\n`;
+      const envContent = `NEXT_PUBLIC_FIREBASE_CONFIG=${firebaseConfigString}\nNEXT_PUBLIC_GCP_PROJECT_ID=${gcpProjectId}\nNEXT_PUBLIC_GCP_REGION=${gcpRegion}\n`;
       fs.writeFileSync(".env.local", envContent);
 
       console.log(".env.local file created successfully.");

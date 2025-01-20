@@ -16,14 +16,10 @@
     "create-local-env": "node scripts/create-local-env.js"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.1",
-    "@chakra-ui/next-js": "^2.2.0",
-    "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@fontsource/noto-sans-jp": "^5.0.18",
     "@svgr/webpack": "^8.1.0",
-    "chakra-ui-markdown-renderer": "^4.1.0",
     "firebase": "^10.8.0",
     "framer-motion": "^11.0.6",
     "lottie-react": "^2.4.0",
@@ -32,8 +28,7 @@
     "path-browserify": "^1.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-markdown": "^8.0.0",
-    "xlsx": "^0.18.5"
+    "react-markdown": "^8.0.0"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

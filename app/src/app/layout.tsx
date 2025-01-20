@@ -2,8 +2,6 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
-import theme from "@/theme/index";
 import { Noto_Sans_JP } from "next/font/google";
 import { ReactNode } from "react";
 
@@ -30,7 +28,7 @@ export default function RootLayout({
           margin: "auto",
         }}
       >
-        <ChakraProvider theme={theme}>{children}</ChakraProvider>
+        {children}
       </body>
     </html>
   );
