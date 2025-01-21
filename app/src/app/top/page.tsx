@@ -1,11 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import { weapons } from "./weapons";
-import Header from "../components/Header";
+import { Header } from "../../components/Header";
+import { FirebaseAuthHandler, FirebaseAuthProvider } from "../../firebase/Auth";
+import { getAuth } from "firebase/auth";
+import { getFirebaseApp } from "../../firebase/App";
 
 export default function Top() {
   const [selectedWeapon, setSelectedWeapon] = useState<string | null>(null);
   const [isWeaponListOpen, setIsWeaponListOpen] = useState(false);
+
+  const app = getFirebaseApp();
+  const auth = getAuth(app);
+  const authProvider = new FirebaseAuthProvider(auth);
+  const authHandler = new FirebaseAuthHandler(authProvider);
 
   const handleSelectWeapon = (weaponId: string) => {
     setSelectedWeapon(weaponId);
@@ -14,7 +22,7 @@ export default function Top() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
+      <Header authHandler={authHandler} />
       <main className="flex-1 p-4 md:p-8 bg-gradient-to-br from-[#2F338A] to-[#1A1E4D] text-white">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">SP3 ブキスコープ</h1>
