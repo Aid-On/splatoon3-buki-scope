@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { weapons } from "./weapons";
+import Header from "../components/Header";
 
 export default function Top() {
   const [selectedWeapon, setSelectedWeapon] = useState<string | null>(null);
@@ -12,48 +13,51 @@ export default function Top() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#2F338A] to-[#1A1E4D] text-white p-4 md:p-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8 text-center">SP3 ブキスコープ</h1>
-        
-        {/* 武器選択エリア */}
-        <div className="relative mb-8">
-          <button
-            onClick={() => setIsWeaponListOpen(!isWeaponListOpen)}
-            className="bg-[#FF66A1] hover:bg-[#FF85B1] text-white px-6 py-3 rounded-full 
-                     font-semibold transition-all duration-300 mx-auto block
-                     shadow-[0_0_10px_4px_rgba(255,102,161,0.3)]
-                     hover:shadow-[0_0_15px_6px_rgba(255,133,177,0.5)]"
-          >
-            {selectedWeapon 
-              ? `選択中: ${weapons.find(w => w.id === selectedWeapon)?.nameJp}`
-              : "+ ブキを選択"}
-          </button>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1 p-4 md:p-8 bg-gradient-to-br from-[#2F338A] to-[#1A1E4D] text-white">
+        <div className="max-w-6xl mx-auto">
+          <h1 className="text-4xl font-bold mb-8 text-center">SP3 ブキスコープ</h1>
+          
+          {/* 武器選択エリア */}
+          <div className="relative mb-8">
+            <button
+              onClick={() => setIsWeaponListOpen(!isWeaponListOpen)}
+              className="bg-[#FF66A1] hover:bg-[#FF85B1] text-white px-6 py-3 rounded-full 
+                       font-semibold transition-all duration-300 mx-auto block
+                       shadow-[0_0_10px_4px_rgba(255,102,161,0.3)]
+                       hover:shadow-[0_0_15px_6px_rgba(255,133,177,0.5)]"
+            >
+              {selectedWeapon 
+                ? `選択中: ${weapons.find(w => w.id === selectedWeapon)?.nameJp}`
+                : "+ ブキを選択"}
+            </button>
 
-          {/* 武器リストドロップダウン */}
-          {isWeaponListOpen && (
-            <div className="absolute mt-2 w-full max-h-96 overflow-y-auto bg-[#2F338A]/95 
-                          rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm z-50">
-              <div className="p-2">
-                {weapons.map((weapon) => (
-                  <button
-                    key={weapon.id}
-                    onClick={() => handleSelectWeapon(weapon.id)}
-                    className="w-full text-left px-4 py-3 hover:bg-[#FF66A1]/20 
-                             rounded-md transition-colors duration-200 flex justify-between items-center"
-                  >
-                    <span>{weapon.nameJp}</span>
-                    <span className="text-sm opacity-70">({weapon.name})</span>
-                  </button>
-                ))}
+            {/* 武器リストドロップダウン */}
+            {isWeaponListOpen && (
+              <div className="absolute mt-2 w-full max-h-96 overflow-y-auto bg-[#2F338A]/95 
+                            rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm z-50">
+                <div className="p-2">
+                  {weapons.map((weapon) => (
+                    <button
+                      key={weapon.id}
+                      onClick={() => handleSelectWeapon(weapon.id)}
+                      className="w-full text-left px-4 py-3 hover:bg-[#FF66A1]/20 
+                               rounded-md transition-colors duration-200 flex justify-between items-center"
+                    >
+                      <span>{weapon.nameJp}</span>
+                      <span className="text-sm opacity-70">({weapon.name})</span>
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-        </div>
+            )}
+          </div>
 
-        {/* 比較テーブル */}
-        {selectedWeapon && <ComparisonTable selectedWeaponId={selectedWeapon} />}
-      </div>
+          {/* 比較テーブル */}
+          {selectedWeapon && <ComparisonTable selectedWeaponId={selectedWeapon} />}
+        </div>
+      </main>
     </div>
   );
 }
