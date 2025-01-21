@@ -1,5 +1,3 @@
-// "use client";
-
 import type { Metadata } from "next";
 import "./globals.css";
 import { Noto_Sans_JP } from "next/font/google";
@@ -20,9 +18,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={notoSansJP.className}
+        className={`${notoSansJP.className} bg-white`}
         style={{
-          backgroundColor: "white",
           maxWidth: "100dvw",
           height: "100dvh",
           margin: "auto",
