@@ -33,7 +33,7 @@ export default function Top() {
           {/* 武器リストドロップダウン */}
           {isWeaponListOpen && (
             <div className="absolute mt-2 w-full max-h-96 overflow-y-auto bg-[#2F338A]/95 
-                          rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm">
+                          rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm z-50">
               <div className="p-2">
                 {weapons.map((weapon) => (
                   <button
