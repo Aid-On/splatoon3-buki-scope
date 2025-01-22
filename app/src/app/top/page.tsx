@@ -25,8 +25,8 @@ export default function Top() {
       <Header authHandler={authHandler} />
       <main className="flex-1 p-4 md:p-8 bg-gradient-to-br from-[#2F338A] to-[#1A1E4D] text-white">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl font-bold mb-8 text-center">SP3 ブキスコープ</h1>
-          
+          <h1 className="text-4xl font-bold mb-8 text-center">Splatoon3 ブキスコープ</h1>
+
           {/* 武器選択エリア */}
           <div className="relative mb-8">
             <button
@@ -36,15 +36,15 @@ export default function Top() {
                        shadow-[0_0_10px_4px_rgba(255,102,161,0.3)]
                        hover:shadow-[0_0_15px_6px_rgba(255,133,177,0.5)]"
             >
-              {selectedWeapon 
-                ? `選択中: ${weapons.find(w => w.id === selectedWeapon)?.nameJp}`
-                : "+ ブキを選択"}
+              {selectedWeapon ? `選択中: ${weapons.find((w) => w.id === selectedWeapon)?.nameJp}` : "+ ブキを選択"}
             </button>
 
             {/* 武器リストドロップダウン */}
             {isWeaponListOpen && (
-              <div className="absolute mt-2 w-full max-h-96 overflow-y-auto bg-[#2F338A]/95 
-                            rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm z-50">
+              <div
+                className="absolute mt-2 w-full max-h-96 overflow-y-auto bg-[#2F338A]/95 
+                            rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm z-50"
+              >
                 <div className="p-2">
                   {weapons.map((weapon) => (
                     <button
@@ -75,20 +75,26 @@ interface ComparisonTableProps {
 }
 
 function ComparisonTable({ selectedWeaponId }: ComparisonTableProps) {
-  const selectedWeapon = weapons.find(w => w.id === selectedWeaponId);
+  const selectedWeapon = weapons.find((w) => w.id === selectedWeaponId);
   if (!selectedWeapon) return null;
 
-  const winningWeapons = weapons.filter(w => w.id !== selectedWeaponId && w.range < selectedWeapon.range)
-    .sort((a, b) => b.range - a.range);
-  const losingWeapons = weapons.filter(w => w.id !== selectedWeaponId && w.range > selectedWeapon.range)
-    .sort((a, b) => a.range - b.range);
+  const winningWeapons = weapons
+    .filter((w) => w.id !== selectedWeaponId && w.attacks[0].range < selectedWeapon.attacks[0].range)
+    .sort((a, b) => b.attacks[0].range - a.attacks[0].range);
+  const losingWeapons = weapons
+    .filter((w) => w.id !== selectedWeaponId && w.attacks[0].range > selectedWeapon.attacks[0].range)
+    .sort((a, b) => a.attacks[0].range - b.attacks[0].range);
 
-  const WeaponList = ({ weapons, type }: { weapons: typeof winningWeapons, type: "勝ち" | "負け" }) => (
-    <div className={`flex-1 ${type === "勝ち" ? "bg-[#FF66A1]/20" : "bg-[#2F338A]/40"} 
+  const WeaponList = ({ weapons, type }: { weapons: typeof winningWeapons; type: "勝ち" | "負け" }) => (
+    <div
+      className={`flex-1 ${type === "勝ち" ? "bg-[#FF66A1]/20" : "bg-[#2F338A]/40"} 
                     p-6 rounded-2xl backdrop-blur-sm
-                    border border-white/10 shadow-lg`}>
+                    border border-white/10 shadow-lg`}
+    >
       <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-        <span className={`inline-block w-2 h-2 rounded-full ${type === "勝ち" ? "bg-[#FF66A1]" : "bg-[#2F338A]"}`}></span>
+        <span
+          className={`inline-block w-2 h-2 rounded-full ${type === "勝ち" ? "bg-[#FF66A1]" : "bg-[#2F338A]"}`}
+        ></span>
         射程{type}マッチ
         <span className="text-sm font-normal ml-2">({weapons.length})</span>
       </h2>
@@ -97,18 +103,20 @@ function ComparisonTable({ selectedWeaponId }: ComparisonTableProps) {
       ) : (
         <div className="space-y-3">
           {weapons.map((weapon) => (
-            <div key={weapon.id} 
-                 className={`flex items-center justify-between p-3 
+            <div
+              key={weapon.id}
+              className={`flex items-center justify-between p-3 
                           ${type === "勝ち" ? "bg-[#FF66A1]/10" : "bg-[#2F338A]/20"} 
                           rounded-lg transition-all duration-300
                           hover:bg-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]
-                          border border-white/5`}>
+                          border border-white/5`}
+            >
               <div>
                 <div className="font-medium">{weapon.nameJp}</div>
                 <div className="text-sm text-white/70">{weapon.name}</div>
               </div>
               <div className="text-right">
-                <div className="font-medium">{weapon.range}</div>
+                <div className="font-medium">{weapon.attacks[0].range}</div>
                 <div className="text-sm text-white/70">射程</div>
               </div>
             </div>
@@ -123,9 +131,9 @@ function ComparisonTable({ selectedWeaponId }: ComparisonTableProps) {
       <div className="text-center mb-8">
         <div className="text-2xl font-bold">{selectedWeapon.nameJp}</div>
         <div className="text-white/70">({selectedWeapon.name})</div>
-        <div className="mt-2 text-xl">射程: {selectedWeapon.range}</div>
+        <div className="mt-2 text-xl">射程: {selectedWeapon.attacks[0].range}</div>
       </div>
-      
+
       <div className="flex gap-6 flex-col md:flex-row">
         <WeaponList weapons={winningWeapons} type="勝ち" />
         <WeaponList weapons={losingWeapons} type="負け" />
