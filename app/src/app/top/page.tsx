@@ -5,6 +5,7 @@ import { Header } from "../../components/Header";
 import { FirebaseAuthHandler, FirebaseAuthProvider } from "../../firebase/Auth";
 import { getAuth } from "firebase/auth";
 import { getFirebaseApp } from "../../firebase/App";
+import { resolvePublicPath } from "@/resolvePublicPath";
 
 export default function Top() {
   const [selectedWeapon, setSelectedWeapon] = useState<string | null>(null);
@@ -111,6 +112,7 @@ function ComparisonTable({ selectedWeaponId }: ComparisonTableProps) {
                           hover:bg-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)]
                           border border-white/5`}
             >
+              <img alt="xxx" width="60px" height="60px" src={weapon.imageFile} />
               <div>
                 <div className="font-medium">{weapon.nameJp}</div>
                 <div className="text-sm text-white/70">{weapon.name}</div>

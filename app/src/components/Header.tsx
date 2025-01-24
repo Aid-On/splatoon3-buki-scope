@@ -21,13 +21,10 @@ export const Header = ({ authHandler }: HeaderProps) => {
   };
 
   return (
-    <header className="w-full bg-white shadow-md">
+    <header className="bg-gradient-to-r from-purple-400 via-blue-600 to-[#ffff66]">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <h1 className="text-xl font-bold">SP3 Buki Scope</h1>
-        <button
-          onClick={handleLogout}
-          className="px-4 py-2 text-sm bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
-        >
+        <button onClick={handleLogout} className="px-4 py-2 text-sm rounded-md transition-colors">
           ログアウト
         </button>
       </div>
