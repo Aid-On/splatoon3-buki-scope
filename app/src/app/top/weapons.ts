@@ -6,8 +6,23 @@ interface WeaponAttack {
   // maxDamage?: number;
 }
 
-interface Weapon {
+enum WeaponCategoryID {
+  shooter, // 0
+  roller, // 1
+  charger, // 2
+  slosher, //3
+  splatling, //4
+  dualie, //5
+  brella, //6
+  blaster, //7
+  brush, //8
+  stringer, //9
+  splatana, //10
+}
+
+export interface Weapon {
   id: string;
+  categoryID: WeaponCategoryID;
   name: string;
   nameJp: string;
   //range: number;
@@ -21,6 +36,7 @@ interface Weapon {
 export const weapons: Weapon[] = [
   {
     id: "bold",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot Nova",
     nameJp: "ボールドマーカー",
     imageFile: "images/weapons/ボールド.png",
@@ -35,6 +51,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "boldneo",
+    categoryID: WeaponCategoryID.shooter,
     name: "boldneo",
     nameJp: "ボールドマーカーネオ",
     imageFile: "images/weapons/ボールドネオ.png",
@@ -49,6 +66,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "wakaba",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot Jr.",
     nameJp: "わかばシューター",
     imageFile: "images/weapons/わかば.png",
@@ -63,6 +81,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "wakaba1",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot Jr.",
     nameJp: "もみじシューター",
     imageFile: "images/weapons/もみじ.png",
@@ -77,6 +96,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "sharp",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splash-o-matic",
     nameJp: "シャープマーカー",
     imageFile: "images/weapons/シャプマ.png",
@@ -91,6 +111,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "sharp1",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splash-o-matic",
     nameJp: "シャープマーカーネオ",
     imageFile: "images/weapons/シマネ.png",
@@ -105,6 +126,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "promodeler",
+    categoryID: WeaponCategoryID.shooter,
     name: "Aerospray MG",
     nameJp: "プロモデラーMG",
     imageFile: "images/weapons/銀モデ.png",
@@ -119,6 +141,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "promodeler1",
+    categoryID: WeaponCategoryID.shooter,
     name: "Aerospray RG",
     nameJp: "プロモデラーRG",
     imageFile: "images/weapons/金モデ.png",
@@ -133,9 +156,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splattershot",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot",
     nameJp: "スプラシューター",
-    imageFile: "images/weapons/スプラシューター.png",
+    imageFile: "images/weapons/スシ.png",
     attacks: [
       {
         description: "通常撃ち",
@@ -147,9 +171,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splattershot1",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot",
     nameJp: "スプラシューターコラボ",
-    imageFile: "images/weapons/スプラシューターコラボ.png",
+    imageFile: "images/weapons/スシコラ.png",
     attacks: [
       {
         description: "通常撃ち",
@@ -161,6 +186,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splattershot2",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot",
     nameJp: "ヒーローシューターレプリカ",
     imageFile: "images/weapons/ヒーローシューター.png",
@@ -175,6 +201,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splattershot3",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot",
     nameJp: "オクタシューターレプリカ",
     imageFile: "images/weapons/オクタシューター.png",
@@ -189,6 +216,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splattershot4",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot",
     nameJp: "オーダーシューターレプリカ",
     imageFile: "images/weapons/オーダーシューター.png",
@@ -203,6 +231,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "52gal",
+    categoryID: WeaponCategoryID.shooter,
     name: ".52 Gal",
     nameJp: ".52ガロン",
     imageFile: "images/weapons/52.png",
@@ -217,6 +246,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "52galdeko",
+    categoryID: WeaponCategoryID.shooter,
     name: ".52 Galdeko",
     nameJp: ".52ガロンデコ",
     imageFile: "images/weapons/52デコ.png",
@@ -231,6 +261,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "nzap",
+    categoryID: WeaponCategoryID.shooter,
     name: "N-ZAP '85",
     nameJp: "N-ZAP85",
     imageFile: "images/weapons/黒ザップ.png",
@@ -245,6 +276,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "nzap1",
+    categoryID: WeaponCategoryID.shooter,
     name: "N-ZAP '89",
     nameJp: "N-ZAP89",
     imageFile: "images/weapons/赤ザップ.png",
@@ -259,6 +291,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "prime",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot Pro",
     nameJp: "プライムシューター",
     imageFile: "images/weapons/プライム.png",
@@ -273,6 +306,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "prime1",
+    categoryID: WeaponCategoryID.shooter,
     name: "Splattershot Pro",
     nameJp: "プライムシューターコラボ",
     imageFile: "images/weapons/プラコラ.png",
@@ -287,6 +321,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "96gal",
+    categoryID: WeaponCategoryID.shooter,
     name: ".96 Gal",
     nameJp: ".96ガロン",
     imageFile: "images/weapons/96.png",
@@ -301,6 +336,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "96galdeko",
+    categoryID: WeaponCategoryID.shooter,
     name: ".96 Galdeko",
     nameJp: ".96ガロンデコ",
     imageFile: "images/weapons/96デコ.png",
@@ -315,6 +351,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "jet",
+    categoryID: WeaponCategoryID.shooter,
     name: "Jet Squelcher",
     nameJp: "ジェットスイーパー",
     imageFile: "images/weapons/ジェット.png",
@@ -329,6 +366,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "jet1",
+    categoryID: WeaponCategoryID.shooter,
     name: "Jet Squelcher",
     nameJp: "ジェットスイーパーカスタム",
     imageFile: "images/weapons/ジェッカス.png",
@@ -343,6 +381,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "space",
+    categoryID: WeaponCategoryID.shooter,
     name: "space",
     nameJp: "スペースシューター",
     imageFile: "images/weapons/スペース.png",
@@ -357,6 +396,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "space1",
+    categoryID: WeaponCategoryID.shooter,
     name: "space",
     nameJp: "スペースシューターコラボ",
     imageFile: "images/weapons/スペコラ.png",
@@ -371,6 +411,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "L3",
+    categoryID: WeaponCategoryID.shooter,
     name: "L3",
     nameJp: "L3リールガン",
     imageFile: "images/weapons/L3リールガン.png",
@@ -385,6 +426,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "L3.1",
+    categoryID: WeaponCategoryID.shooter,
     name: "L3",
     nameJp: "L3リールガンD",
     imageFile: "images/weapons/L3リールガンデコ.png",
@@ -399,6 +441,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "H3",
+    categoryID: WeaponCategoryID.shooter,
     name: "H3",
     nameJp: "H3リールガン",
     imageFile: "images/weapons/H3リールガン.png",
@@ -413,6 +456,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "H3.1",
+    categoryID: WeaponCategoryID.shooter,
     name: "H3",
     nameJp: "H3リールガンD",
     imageFile: "images/weapons/H3リールガンデコ.png",
@@ -427,6 +471,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "botoru",
+    categoryID: WeaponCategoryID.shooter,
     name: "botoru",
     nameJp: "ボトルガイザー",
     imageFile: "images/weapons/ボトルガイザー.png",
@@ -448,6 +493,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "botoru1",
+    categoryID: WeaponCategoryID.shooter,
     name: "botoru",
     nameJp: "ボトルガイザーフォイル",
     imageFile: "images/weapons/ボトルガイザーフォイル.png",
@@ -469,6 +515,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "carbon",
+    categoryID: WeaponCategoryID.roller,
     name: "carbon",
     nameJp: "カーボンローラー",
     imageFile: "images/weapons/カーボン.png",
@@ -485,6 +532,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "carbon_deco",
+    categoryID: WeaponCategoryID.roller,
     name: "carbon_deco",
     nameJp: "カーボンローラーデコ",
     imageFile: "images/weapons/カーデコ.png",
@@ -501,6 +549,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatroller",
+    categoryID: WeaponCategoryID.roller,
     name: "splatroller",
     nameJp: "スプラローラー",
     imageFile: "images/weapons/スプラローラー.png",
@@ -517,9 +566,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatroller_collabo",
+    categoryID: WeaponCategoryID.roller,
     name: "splatroller_collabo",
     nameJp: "スプラローラーコラボ",
-    imageFile: "images/weaponsスプラローラーコラボ.png",
+    imageFile: "images/weapons/スプラローラーコラボ.png",
     attacks: [
       {
         description: "縦振り",
@@ -533,6 +583,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_roller_replica",
+    categoryID: WeaponCategoryID.roller,
     name: "order_roller_replica",
     nameJp: "オーダーローラーレプリカ",
     imageFile: "images/weapons/オーダーローラー.png",
@@ -549,6 +600,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "dynamo",
+    categoryID: WeaponCategoryID.roller,
     name: "dynamo",
     nameJp: "ダイナモローラー",
     imageFile: "images/weapons/ダイナモ.png",
@@ -565,6 +617,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "dynamo_tesla",
+    categoryID: WeaponCategoryID.roller,
     name: "dynamo_tesla",
     nameJp: "ダイナモローラーテスラ",
     imageFile: "images/weapons/ダイナモテスラ.png",
@@ -581,6 +634,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "wideroller",
+    categoryID: WeaponCategoryID.roller,
     name: "wideroller",
     nameJp: "ワイドローラー",
     imageFile: "images/weapons/ワイドローラー.png",
@@ -597,6 +651,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "wideroller_collabo",
+    categoryID: WeaponCategoryID.roller,
     name: "wideroller_collabo",
     nameJp: "ワイドローラーコラボ",
     imageFile: "images/weapons/ワイドローラーコラボ.png",
@@ -614,6 +669,7 @@ export const weapons: Weapon[] = [
   // チャージャー
   {
     id: "squiclean_a",
+    categoryID: WeaponCategoryID.charger,
     name: "squiclean_a",
     nameJp: "スクイックリンα",
     imageFile: "images/weapons/スクイク.png",
@@ -626,6 +682,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "squiclean_b",
+    categoryID: WeaponCategoryID.charger,
     name: "squiclean_b",
     nameJp: "スクイックリンβ",
     imageFile: "images/weapons/スクイクβ.png",
@@ -638,6 +695,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatcharger",
+    categoryID: WeaponCategoryID.charger,
     name: "splatcharger",
     nameJp: "スプラチャージャー",
     imageFile: "images/weapons/スプラチャージャー.png",
@@ -650,6 +708,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatcharger_collabo",
+    categoryID: WeaponCategoryID.charger,
     name: "splatcharger_collabo",
     nameJp: "スプラチャージャーコラボ",
     imageFile: "images/weapons/スプラチャージャーコラボ.png",
@@ -662,6 +721,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_charger_replica",
+    categoryID: WeaponCategoryID.charger,
     name: "order_charger_replica",
     nameJp: "オーダーチャージャー レプリカ",
     imageFile: "images/weapons/オーダーチャージャー.png",
@@ -674,6 +734,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatscope",
+    categoryID: WeaponCategoryID.charger,
     name: "splatscope",
     nameJp: "スプラスコープ",
     imageFile: "images/weapons/スプチャスコープ.png",
@@ -686,6 +747,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatscope_collabo",
+    categoryID: WeaponCategoryID.charger,
     name: "splatscope_collabo",
     nameJp: "スプラスコープコラボ",
     imageFile: "images/weapons/スプラスコープコラボ.png",
@@ -698,6 +760,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "liter4k",
+    categoryID: WeaponCategoryID.charger,
     name: "liter4k",
     nameJp: "リッター4K",
     imageFile: "images/weapons/リッター.png",
@@ -710,6 +773,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "liter4k_custom",
+    categoryID: WeaponCategoryID.charger,
     name: "liter4k_custom",
     nameJp: "リッター4Kカスタム",
     imageFile: "images/weapons/リッカス.png",
@@ -722,6 +786,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "liter4k_scope",
+    categoryID: WeaponCategoryID.charger,
     name: "liter4k_scope",
     nameJp: "4Kスコープ",
     imageFile: "images/weapons/4Kスコープ.png",
@@ -733,7 +798,21 @@ export const weapons: Weapon[] = [
     ],
   },
   {
+    id: "liter4k_scope",
+    categoryID: WeaponCategoryID.charger,
+    name: "liter4k_scopekasutamu",
+    nameJp: "4Kスコープカスタム",
+    imageFile: "images/weapons/リッカススコープ.png",
+    attacks: [
+      {
+        description: "フルチャージ",
+        range: 6.5,
+      },
+    ],
+  },
+  {
     id: "bamboo14mk1",
+    categoryID: WeaponCategoryID.charger,
     name: "bamboo14mk1",
     nameJp: "14式竹筒銃・甲",
     imageFile: "images/weapons/竹・甲.png",
@@ -746,6 +825,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "bamboo14mk2",
+    categoryID: WeaponCategoryID.charger,
     name: "bamboo14mk2",
     nameJp: "14式竹筒銃・乙",
     imageFile: "images/weapons/竹・乙.png",
@@ -758,6 +838,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "soytuber",
+    categoryID: WeaponCategoryID.charger,
     name: "soytuber",
     nameJp: "ソイチューバー",
     imageFile: "images/weapons/ソイチュ.png",
@@ -770,6 +851,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "soytuber_custom",
+    categoryID: WeaponCategoryID.charger,
     name: "soytuber_custom",
     nameJp: "ソイチューバーカスタム",
     imageFile: "images/weapons/ソイチュカスタム.png",
@@ -782,9 +864,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "rpen_5h",
+    categoryID: WeaponCategoryID.charger,
     name: "rpen_5h",
     nameJp: "R-PEN/5H",
-    imageFile: "images/weapons/R-PEN/5H.png",
+    imageFile: "images/weapons/R-PEN 5H.png",
     attacks: [
       {
         description: "フルチャージ",
@@ -794,9 +877,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "rpen_5b",
+    categoryID: WeaponCategoryID.charger,
     name: "rpen_5b",
     nameJp: "R-PEN/5B",
-    imageFile: "images/weapons/R-PEN/5B.png",
+    imageFile: "images/weapons/R-PEN 5B.png",
     attacks: [
       {
         description: "フルチャージ",
@@ -807,6 +891,7 @@ export const weapons: Weapon[] = [
   // バケツ
   {
     id: "bucketslosher",
+    categoryID: WeaponCategoryID.slosher,
     name: "bucketslosher",
     nameJp: "バケットスロッシャー",
     imageFile: "images/weapons/バケスロ.png",
@@ -819,9 +904,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "bucketslosher_deco",
+    categoryID: WeaponCategoryID.slosher,
     name: "bucketslosher_deco",
     nameJp: "バケットスロッシャーデコ",
-    imageFile: "images/weapons/バケスロデコ.png",
+    imageFile: "images/weapons/バケデコ.png",
     attacks: [
       {
         description: "通常撃ち",
@@ -831,6 +917,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_slosher_replica",
+    categoryID: WeaponCategoryID.slosher,
     name: "order_slosher_replica",
     nameJp: "オーダースロッシャー レプリカ",
     imageFile: "images/weapons/オーダースロッシャー.png",
@@ -843,6 +930,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hissen",
+    categoryID: WeaponCategoryID.slosher,
     name: "hissen",
     nameJp: "ヒッセン",
     imageFile: "images/weapons/ヒッセン.png",
@@ -855,6 +943,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hissen_hue",
+    categoryID: WeaponCategoryID.slosher,
     name: "hissen_hue",
     nameJp: "ヒッセン・ヒュー",
     imageFile: "images/weapons/ヒッセンヒュー.png",
@@ -867,6 +956,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "screwslosher",
+    categoryID: WeaponCategoryID.slosher,
     name: "screwslosher",
     nameJp: "スクリュースロッシャー",
     imageFile: "images/weapons/スクスロ.png",
@@ -883,6 +973,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "screwslosher_neo",
+    categoryID: WeaponCategoryID.slosher,
     name: "screwslosher_neo",
     nameJp: "スクリュースロッシャーネオ",
     imageFile: "images/weapons/スクネオ.png",
@@ -899,6 +990,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "furo",
+    categoryID: WeaponCategoryID.slosher,
     name: "furo",
     nameJp: "オーバーフロッシャー",
     imageFile: "images/weapons/オバフロ.png",
@@ -915,6 +1007,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "furo_deco",
+    categoryID: WeaponCategoryID.slosher,
     name: "furo_deco",
     nameJp: "オーバーフロッシャーデコ",
     imageFile: "images/weapons/オバフロデコ.png",
@@ -931,6 +1024,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "explosher",
+    categoryID: WeaponCategoryID.slosher,
     name: "explosher",
     nameJp: "エクスプロッシャー",
     imageFile: "images/weapons/エクス.png",
@@ -947,6 +1041,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "explosher_custom",
+    categoryID: WeaponCategoryID.slosher,
     name: "explosher_custom",
     nameJp: "エクスプロッシャーカスタム",
     imageFile: "images/weapons/エクスカスタム.png",
@@ -963,6 +1058,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "moprin",
+    categoryID: WeaponCategoryID.slosher,
     name: "moprin",
     nameJp: "モップリン",
     imageFile: "images/weapons/モップリン.png",
@@ -975,6 +1071,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "moprin_d",
+    categoryID: WeaponCategoryID.slosher,
     name: "moprin_d",
     nameJp: "モップリンD",
     imageFile: "images/weapons/モップリンD.png",
@@ -988,6 +1085,7 @@ export const weapons: Weapon[] = [
   // スピナー
   {
     id: "splatspinner",
+    categoryID: WeaponCategoryID.splatling,
     name: "splatspinner",
     nameJp: "スプラスピナー",
     imageFile: "images/weapons/スプスピ.png",
@@ -1000,6 +1098,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "splatspinner_collabo",
+    categoryID: WeaponCategoryID.splatling,
     name: "splatspinner_collabo",
     nameJp: "スプラスピナーコラボ",
     imageFile: "images/weapons/スプスピコラボ.png",
@@ -1012,6 +1111,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "barrelspinner",
+    categoryID: WeaponCategoryID.splatling,
     name: "barrelspinner",
     nameJp: "バレルスピナー",
     imageFile: "images/weapons/バレル.png",
@@ -1024,6 +1124,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "barrelspinner_deco",
+    categoryID: WeaponCategoryID.splatling,
     name: "barrelspinner_deco",
     nameJp: "バレルスピナーデコ",
     imageFile: "images/weapons/バレルデコ.png",
@@ -1036,6 +1137,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_spinner_replica",
+    categoryID: WeaponCategoryID.splatling,
     name: "order_spinner_replica",
     nameJp: "オーダースピナー レプリカ",
     imageFile: "images/weapons/オーダースピナー.png",
@@ -1048,6 +1150,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hydra",
+    categoryID: WeaponCategoryID.splatling,
     name: "hydra",
     nameJp: "ハイドラント",
     imageFile: "images/weapons/ハイドラ.png",
@@ -1060,6 +1163,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hydra_custom",
+    categoryID: WeaponCategoryID.splatling,
     name: "hydra_custom",
     nameJp: "ハイドラントカスタム",
     imageFile: "images/weapons/ハイドラカスタム.png",
@@ -1072,6 +1176,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "kugelschreiber",
+    categoryID: WeaponCategoryID.splatling,
     name: "kugelschreiber",
     nameJp: "クーゲルシュライバー",
     imageFile: "images/weapons/クーゲル.png",
@@ -1088,6 +1193,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "kugelschreiber_hue",
+    categoryID: WeaponCategoryID.splatling,
     name: "kugelschreiber_hue",
     nameJp: "クーゲルシュライバー・ヒュー",
     imageFile: "images/weapons/クーゲルヒュー.png",
@@ -1104,6 +1210,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "nautilus47",
+    categoryID: WeaponCategoryID.splatling,
     name: "nautilus47",
     nameJp: "ノーチラス47",
     imageFile: "images/weapons/ノーチラス47.png",
@@ -1116,6 +1223,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "nautilus79",
+    categoryID: WeaponCategoryID.splatling,
     name: "nautilus79",
     nameJp: "ノーチラス79",
     imageFile: "images/weapons/ノーチラス79.png",
@@ -1128,6 +1236,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "	examiner",
+    categoryID: WeaponCategoryID.splatling,
     name: "	examiner",
     nameJp: "イグザミナー",
     imageFile: "images/weapons/イグザミナー.png",
@@ -1140,6 +1249,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "examiner_hue",
+    categoryID: WeaponCategoryID.splatling,
     name: "examiner_hue",
     nameJp: "イグザミナー・ヒュー",
     imageFile: "images/weapons/イグザミナーヒュー.png",
@@ -1153,6 +1263,7 @@ export const weapons: Weapon[] = [
   // マニューバー
   {
     id: "sputtery",
+    categoryID: WeaponCategoryID.dualie,
     name: "sputtery",
     nameJp: "スパッタリー",
     imageFile: "images/weapons/スパッタリー.png",
@@ -1165,6 +1276,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "sputtery_hue",
+    categoryID: WeaponCategoryID.dualie,
     name: "sputtery_hue",
     nameJp: "スパッタリー・ヒュー",
     imageFile: "images/weapons/スパッタリーヒュー.png",
@@ -1177,6 +1289,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "maneuver",
+    categoryID: WeaponCategoryID.dualie,
     name: "maneuver",
     nameJp: "スプラマニューバー",
     imageFile: "images/weapons/スプラマニューバー.png",
@@ -1189,6 +1302,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "maneuver_collabo",
+    categoryID: WeaponCategoryID.dualie,
     name: "maneuver_collabo",
     nameJp: "スプラマニューバーコラボ",
     imageFile: "images/weapons/スプラマニューバーコラボ.png",
@@ -1201,6 +1315,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_maneuver_replica",
+    categoryID: WeaponCategoryID.dualie,
     name: "order_maneuver_replica",
     nameJp: "オーダーマニューバー レプリカ",
     imageFile: "images/weapons/オーダーマニューバー.png",
@@ -1213,6 +1328,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "kelvin525",
+    categoryID: WeaponCategoryID.dualie,
     name: "kelvin525",
     nameJp: "ケルビン525",
     imageFile: "images/weapons/ケルビン.png",
@@ -1225,6 +1341,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "kelvin525_deco",
+    categoryID: WeaponCategoryID.dualie,
     name: "kelvin525_deco",
     nameJp: "ケルビン525デコ",
     imageFile: "images/weapons/ケルビンデコ.png",
@@ -1237,6 +1354,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "dualsweeper",
+    categoryID: WeaponCategoryID.dualie,
     name: "dualsweeper",
     nameJp: "デュアルスイーパー",
     imageFile: "images/weapons/デュアル.png",
@@ -1249,6 +1367,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "dualsweeper_custom",
+    categoryID: WeaponCategoryID.dualie,
     name: "dualsweeper_custom",
     nameJp: "デュアルスイーパーカスタム",
     imageFile: "images/weapons/デュアルカスタム.png",
@@ -1261,6 +1380,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "quadhopper_black",
+    categoryID: WeaponCategoryID.dualie,
     name: "quadhopper_black",
     nameJp: "クアッドホッパーブラック",
     imageFile: "images/weapons/クアッドブラック.png",
@@ -1273,6 +1393,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "quadhopper_white",
+    categoryID: WeaponCategoryID.dualie,
     name: "quadhopper_white",
     nameJp: "クアッドホッパーホワイト",
     imageFile: "images/weapons/クアッドホワイト.png",
@@ -1285,6 +1406,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "gaen_ff",
+    categoryID: WeaponCategoryID.dualie,
     name: "gaen_ff",
     nameJp: "ガエンFF",
     imageFile: "images/weapons/ガエン.png",
@@ -1301,6 +1423,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "gaen_ff_custom",
+    categoryID: WeaponCategoryID.dualie,
     name: "gaen_ff_custom",
     nameJp: "ガエンFFカスタム",
     imageFile: "images/weapons/ガエンカスタム.png",
@@ -1318,6 +1441,7 @@ export const weapons: Weapon[] = [
   // 傘
   {
     id: "parashelter",
+    categoryID: WeaponCategoryID.brella,
     name: "parashelter",
     nameJp: "パラシェルター",
     imageFile: "images/weapons/パラシェルター.png",
@@ -1330,6 +1454,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "parashelter_sorella",
+    categoryID: WeaponCategoryID.brella,
     name: "parashelter_sorella",
     nameJp: "パラシェルターソレーラ",
     imageFile: "images/weapons/パラシェルターソレーラ.png",
@@ -1342,6 +1467,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_shelter_replica",
+    categoryID: WeaponCategoryID.brella,
     name: "order_shelter_replica",
     nameJp: "オーダーシェルター レプリカ",
     imageFile: "images/weapons/オーダーシェルター.png",
@@ -1354,6 +1480,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "campingshelter",
+    categoryID: WeaponCategoryID.brella,
     name: "campingshelter",
     nameJp: "キャンピングシェルター",
     imageFile: "images/weapons/キャンプ.png",
@@ -1370,6 +1497,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "campingshelter_sorella",
+    categoryID: WeaponCategoryID.brella,
     name: "campingshelter_sorella",
     nameJp: "キャンピングシェルターソレーラ",
     imageFile: "images/weapons/キャンプソレーラ.png",
@@ -1386,6 +1514,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "spygadget",
+    categoryID: WeaponCategoryID.brella,
     name: "spygadget",
     nameJp: "スパイガジェット",
     imageFile: "images/weapons/スパイガジェット.png",
@@ -1398,6 +1527,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "spygadget_sorella",
+    categoryID: WeaponCategoryID.brella,
     name: "spygadget_sorella",
     nameJp: "スパイガジェットソレーラ",
     imageFile: "images/weapons/スパイガジェットソレーラ.png",
@@ -1410,6 +1540,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "brella24mk1",
+    categoryID: WeaponCategoryID.brella,
     name: "brella24mk1",
     nameJp: "24式張替傘・甲",
     imageFile: "images/weapons/和傘・甲.png",
@@ -1422,6 +1553,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "brella24mk2",
+    categoryID: WeaponCategoryID.brella,
     name: "brella24mk2",
     nameJp: "24式張替傘・乙",
     imageFile: "images/weapons/和傘・乙.png",
@@ -1435,6 +1567,7 @@ export const weapons: Weapon[] = [
   // ブラスター
   {
     id: "nova",
+    categoryID: WeaponCategoryID.blaster,
     name: "nova",
     nameJp: "ノヴァブラスター",
     imageFile: "images/weapons/ノヴァ.png",
@@ -1451,6 +1584,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "nova_neo",
+    categoryID: WeaponCategoryID.blaster,
     name: "nova_neo",
     nameJp: "ノヴァブラスターネオ",
     imageFile: "images/weapons/ノヴァネオ.png",
@@ -1467,6 +1601,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_blaster_replica",
+    categoryID: WeaponCategoryID.blaster,
     name: "order_blaster_replica",
     nameJp: "オーダーブラスター レプリカ",
     imageFile: "images/weapons/オーダーブラスター.png",
@@ -1483,6 +1618,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hotblaster",
+    categoryID: WeaponCategoryID.blaster,
     name: "hotblaster",
     nameJp: "ホットブラスター",
     imageFile: "images/weapons/ホット.png",
@@ -1499,6 +1635,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hotblaster_custom",
+    categoryID: WeaponCategoryID.blaster,
     name: "hotblaster_custom",
     nameJp: "ホットブラスターカスタム",
     imageFile: "images/weapons/ホッカス.png",
@@ -1515,6 +1652,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "longblaster",
+    categoryID: WeaponCategoryID.blaster,
     name: "longblaster",
     nameJp: "ロングブラスター",
     imageFile: "images/weapons/ロング.png",
@@ -1531,6 +1669,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "longblaster_custom",
+    categoryID: WeaponCategoryID.blaster,
     name: "longblaster_custom",
     nameJp: "ロングブラスターカスタム",
     imageFile: "images/weapons/ロングカスタム.png",
@@ -1547,6 +1686,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "clashblaster",
+    categoryID: WeaponCategoryID.blaster,
     name: "clashblaster",
     nameJp: "クラッシュブラスター",
     imageFile: "images/weapons/クラブラ.png",
@@ -1563,6 +1703,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "clashblaster_neo",
+    categoryID: WeaponCategoryID.blaster,
     name: "clashblaster_neo",
     nameJp: "クラッシュブラスターネオ",
     imageFile: "images/weapons/クラブラネオ.png",
@@ -1579,6 +1720,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "rapid",
+    categoryID: WeaponCategoryID.blaster,
     name: "rapid",
     nameJp: "ラピッドブラスター",
     imageFile: "images/weapons/ラピット.png",
@@ -1595,6 +1737,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "rapid_deco",
+    categoryID: WeaponCategoryID.blaster,
     name: "rapid_deco",
     nameJp: "ラピッドブラスターデコ",
     imageFile: "images/weapons/ラピデコ.png",
@@ -1611,6 +1754,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "rapid_elite",
+    categoryID: WeaponCategoryID.blaster,
     name: "rapid_elite",
     nameJp: "Rブラスターエリート",
     imageFile: "images/weapons/Rブラスターエリート.png",
@@ -1627,6 +1771,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "rapid_elite_deco",
+    categoryID: WeaponCategoryID.blaster,
     name: "rapid_elite_deco",
     nameJp: "Rブラスターエリートデコ",
     imageFile: "images/weapons/Rブラスターエリートデコ.png",
@@ -1643,9 +1788,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "sblast92",
+    categoryID: WeaponCategoryID.blaster,
     name: "sblast92",
     nameJp: "S-BLAST92",
-    imageFile: "images/weapons/S-BLAST92.png",
+    imageFile: "images/weapons/S_BLAST92.png",
     attacks: [
       {
         description: "長/爆風",
@@ -1667,9 +1813,10 @@ export const weapons: Weapon[] = [
   },
   {
     id: "sblast91",
+    categoryID: WeaponCategoryID.blaster,
     name: "sblast91",
     nameJp: "S-BLAST91",
-    imageFile: "images/weapons/S-BLAST91.png",
+    imageFile: "images/weapons/S_BLAST91.png",
     attacks: [
       {
         description: "長/爆風",
@@ -1692,6 +1839,7 @@ export const weapons: Weapon[] = [
   // 筆
   {
     id: "pablo",
+    categoryID: WeaponCategoryID.brush,
     name: "pablo",
     nameJp: "パブロ",
     imageFile: "images/weapons/パブロ.png",
@@ -1704,6 +1852,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "pablo_hue",
+    categoryID: WeaponCategoryID.brush,
     name: "pablo_hue",
     nameJp: "パブロ・ヒュー",
     imageFile: "images/weapons/パブロヒュー.png",
@@ -1716,6 +1865,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hokusai",
+    categoryID: WeaponCategoryID.brush,
     name: "hokusai",
     nameJp: "ホクサイ",
     imageFile: "images/weapons/ホクサイ.png",
@@ -1728,6 +1878,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "hokusai_hue",
+    categoryID: WeaponCategoryID.brush,
     name: "hokusai_hue",
     nameJp: "ホクサイ・ヒュー",
     imageFile: "images/weapons/ホクサイヒュー.png",
@@ -1740,6 +1891,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_brush_replica",
+    categoryID: WeaponCategoryID.brush,
     name: "order_brush_replica",
     nameJp: "オーダーブラシ レプリカ",
     imageFile: "images/weapons/オーダーブラシ.png",
@@ -1752,6 +1904,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "fincent",
+    categoryID: WeaponCategoryID.brush,
     name: "fincent",
     nameJp: "フィンセント",
     imageFile: "images/weapons/フィンセント.png",
@@ -1764,6 +1917,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "fincent_hue",
+    categoryID: WeaponCategoryID.brush,
     name: "fincent_hue",
     nameJp: "フィンセント・ヒュー",
     imageFile: "images/weapons/フィンセントヒュー.png",
@@ -1777,6 +1931,7 @@ export const weapons: Weapon[] = [
   // 弓
   {
     id: "tristringer",
+    categoryID: WeaponCategoryID.stringer,
     name: "tristringer",
     nameJp: "トライストリンガー",
     imageFile: "images/weapons/トラスト.png",
@@ -1789,6 +1944,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "tristringer_collabo",
+    categoryID: WeaponCategoryID.stringer,
     name: "tristringer_collabo",
     nameJp: "トライストリンガーコラボ",
     imageFile: "images/weapons/トラストコラボ.png",
@@ -1801,6 +1957,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_stringer_replica",
+    categoryID: WeaponCategoryID.stringer,
     name: "order_stringer_replica",
     nameJp: "オーダーストリンガー レプリカ",
     imageFile: "images/weapons/オーダーストリンガー.png",
@@ -1813,6 +1970,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "lact450",
+    categoryID: WeaponCategoryID.stringer,
     name: "lact450",
     nameJp: "LACT-450",
     imageFile: "images/weapons/LACT.png",
@@ -1825,6 +1983,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "lact450_deco",
+    categoryID: WeaponCategoryID.stringer,
     name: "lact450_deco",
     nameJp: "LACT-450デコ",
     imageFile: "images/weapons/LACTデコ.png",
@@ -1837,6 +1996,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "furuido",
+    categoryID: WeaponCategoryID.stringer,
     name: "furuido",
     nameJp: "フルイドV",
     imageFile: "images/weapons/フルイド.png",
@@ -1849,6 +2009,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "furuido_custom",
+    categoryID: WeaponCategoryID.stringer,
     name: "furuido_custom",
     nameJp: "フルイドVカスタム",
     imageFile: "images/weapons/フルイドカスタム.png",
@@ -1862,6 +2023,7 @@ export const weapons: Weapon[] = [
   // ワイパー
   {
     id: "jimuwiper",
+    categoryID: WeaponCategoryID.splatana,
     name: "jimuwiper",
     nameJp: "ジムワイパー",
     imageFile: "images/weapons/ジム.png",
@@ -1886,6 +2048,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "jimuwiper_hue",
+    categoryID: WeaponCategoryID.splatana,
     name: "jimuwiper_hue",
     nameJp: "ジムワイパー・ヒュー",
     imageFile: "images/weapons/ジムヒュー.png",
@@ -1910,6 +2073,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "order_wiper_replica",
+    categoryID: WeaponCategoryID.splatana,
     name: "order_wiper_replica",
     nameJp: "オーダーワイパー レプリカ",
     imageFile: "images/weapons/オーダーワイパー.png",
@@ -1934,6 +2098,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "drivewiper",
+    categoryID: WeaponCategoryID.splatana,
     name: "drivewiper",
     nameJp: "ドライブワイパー",
     imageFile: "images/weapons/ドライブワイパー.png",
@@ -1958,6 +2123,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "drivewiper_deco",
+    categoryID: WeaponCategoryID.splatana,
     name: "drivewiper_deco",
     nameJp: "ドライブワイパーデコ",
     imageFile: "images/weapons/ドライブワイパーデコ.png",
@@ -1982,6 +2148,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "dentalwiper_mint",
+    categoryID: WeaponCategoryID.splatana,
     name: "dentalwiper_mint",
     nameJp: "デンタルワイパーミント",
     imageFile: "images/weapons/デンタルミント.png",
@@ -2006,6 +2173,7 @@ export const weapons: Weapon[] = [
   },
   {
     id: "dentalwiper_sumi",
+    categoryID: WeaponCategoryID.splatana,
     name: "dentalwiper_sumi",
     nameJp: "デンタルワイパースミ",
     imageFile: "images/weapons/デンタルスミ.png",
