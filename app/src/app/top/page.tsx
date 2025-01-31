@@ -44,7 +44,13 @@ export default function Top() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header authHandler={authHandler} />
-      <main className="flex-1 p-4 md:p-8 bg-gradient-to-br from-[#2F338A] to-[#1A1E4D] text-white">
+      <main className="flex-1 p-4 md:p-8 bg-gradient-to-br from-[#2F338A] to-[#1A1E4D] text-white relative overflow-hidden">
+        <div className="absolute right-8 top-8 w-[110px] h-[110px] opacity-80 hidden md:block">
+          <img src="/images/weapons/ジャッチくん.png" alt="ジャッチくん" className="w-full h-full object-contain" />
+        </div>
+        <div className="absolute left-8 top-24 w-[200px] h-[200px] opacity-100 hidden md:block">
+          <img src="/images/weapons/すりみ連合.png" alt="すりみ連合" className="w-full h-full object-contain" />
+        </div>
         <div className="max-w-6xl mx-auto">
           <h1 className="text-4xl font-bold mb-8 text-center">Splatoon3 ブキスコープ</h1>
 
@@ -67,28 +73,41 @@ export default function Top() {
                             rounded-lg shadow-lg border border-[#FF66A1]/30 backdrop-blur-sm z-50"
               >
                 <div className="p-2">
-                  <textarea
-                    className="iruka chan iikanji ni iretoite ne"
-                    placeholder="検索したい武器を入れてね"
-                    onChange={(event) => {
-                      const userInput = event.target.value;
-                      setUserWeaponInput(userInput);
-                    }}
-                  ></textarea>
+                  <div className="relative flex items-center space-x-[10px]">
+                    <textarea
+                      className="w-[400px] h-[36px] rounded-[20px] pl-[18px] text-[15px] pt-[7px] bg-white text-black"
+                      placeholder="検索したい武器を入れてね"
+                      onChange={(event) => {
+                        const userInput = event.target.value;
+                        setUserWeaponInput(userInput);
+                      }}
+                    ></textarea>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-white"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </div>
                   {weapons
                     .filter((weapon) => {
-                      // "weaponには武器名が入ってる"
-                      // weapon.nameJp
-                      // weapon.nameJpは文字列なので、includesという関数が使える
-                      // weapon.nameJp.includes("シューター") => true もしくは false
                       return [userWeaponInput, toggleKana(userWeaponInput)].some((el) => weapon.nameJp.includes(el));
                     })
                     .map((weapon) => (
+                      // 既存の武器リスト表示部分はそのまま
                       <button
                         key={weapon.id}
                         onClick={() => handleSelectWeapon(weapon.id)}
                         className="w-full text-left px-4 py-3 hover:bg-[#FF66A1]/20 
-                               rounded-md transition-colors duration-200 flex justify-between items-center"
+                   rounded-md transition-colors duration-200 flex justify-between items-center"
                       >
                         <span>{weapon.nameJp}</span>
                         <span className="text-sm opacity-70">({weapon.name})</span>
@@ -140,9 +159,9 @@ function ComparisonTable({ selectedWeaponId }: ComparisonTableProps) {
     // https://www.colordic.org/w
     switch (type) {
       case "勝ち":
-        return "#ff6666";
+        return "#cccc00";
       case "同じ":
-        return "#2db300";
+        return "#8c8c8c";
       case "負け":
         return "#0066cc";
     }

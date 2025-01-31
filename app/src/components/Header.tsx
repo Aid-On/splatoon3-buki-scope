@@ -26,22 +26,22 @@ export const Header = ({ authHandler }: HeaderProps) => {
       {/* インクスプラッシュ効果 */}
       <div className="absolute inset-0">
         {/* 紫のインクスプラッシュ */}
-        <div className="absolute -top-10 right-1/4 w-40 h-32 bg-purple-400/70 rounded-[70%_30%_60%_35%] blur-sm transform rotate-[25deg] skew-x-12"></div>
-        <div className="absolute -bottom-8 left-1/3 w-44 h-36 bg-purple-500/60 rounded-[35%_65%_30%_70%] blur-sm rotate-[-35deg] skew-y-6"></div>
-        <div className="absolute top-1/4 -left-4 w-32 h-24 bg-purple-400/55 rounded-[65%_35%_70%_30%] blur-[3px] rotate-[45deg] skew-x-6"></div>
-        <div className="absolute top-1/2 left-1/4 w-20 h-16 bg-purple-400/65 rounded-[60%_40%_35%_65%] blur-[2px] rotate-[-15deg]"></div>
+        <div className="absolute -top-10 right-1/4 w-40 h-32 bg-purple-400/70 rounded-[70%_30%_60%_35%] blur-sm transform rotate-[25deg] skew-x-12 animate-float-ink"></div>
+        <div className="absolute -bottom-8 left-1/3 w-44 h-36 bg-purple-500/60 rounded-[35%_65%_30%_70%] blur-sm rotate-[-35deg] skew-y-6 animate-float-ink [animation-delay:2s]"></div>
+        <div className="absolute top-1/4 -left-4 w-32 h-24 bg-purple-400/55 rounded-[65%_35%_70%_30%] blur-[3px] rotate-[45deg] skew-x-6 animate-float-ink [animation-delay:4s]"></div>
+        <div className="absolute top-1/2 left-1/4 w-20 h-16 bg-purple-400/65 rounded-[60%_40%_35%_65%] blur-[2px] rotate-[-15deg] animate-float-ink [animation-delay:1s]"></div>
 
         {/* 黄色のインクスプラッシュ */}
-        <div className="absolute -top-6 right-1/3 w-36 h-28 bg-[#ffff66]/60 rounded-[30%_70%_35%_65%] blur-sm rotate-[-40deg] skew-y-12"></div>
-        <div className="absolute -bottom-4 right-1/4 w-48 h-32 bg-[#ffff66]/65 rounded-[65%_35%_70%_30%] blur-sm rotate-[35deg] skew-x-6"></div>
-        <div className="absolute top-1/3 -right-8 w-28 h-24 bg-[#ffff66]/55 rounded-[35%_65%_30%_70%] blur-[3px] rotate-[-25deg] skew-y-6"></div>
-        <div className="absolute bottom-1/2 right-1/3 w-16 h-20 bg-[#ffff66]/70 rounded-[70%_30%_65%_35%] blur-[2px] rotate-[15deg]"></div>
+        <div className="absolute -top-6 right-1/3 w-36 h-28 bg-[#ffff66]/60 rounded-[30%_70%_35%_65%] blur-sm rotate-[-40deg] skew-y-12 animate-float-ink [animation-delay:3s]"></div>
+        <div className="absolute -bottom-4 right-1/4 w-48 h-32 bg-[#ffff66]/65 rounded-[65%_35%_70%_30%] blur-sm rotate-[35deg] skew-x-6 animate-float-ink [animation-delay:5s]"></div>
+        <div className="absolute top-1/3 -right-8 w-28 h-24 bg-[#ffff66]/55 rounded-[35%_65%_30%_70%] blur-[3px] rotate-[-25deg] skew-y-6 animate-float-ink [animation-delay:2.5s]"></div>
+        <div className="absolute bottom-1/2 right-1/3 w-16 h-20 bg-[#ffff66]/70 rounded-[70%_30%_65%_35%] blur-[2px] rotate-[15deg] animate-float-ink [animation-delay:1.5s]"></div>
 
         {/* 小さな飛沫 */}
-        <div className="absolute top-1/4 right-1/2 w-6 h-6 bg-purple-400/75 rounded-[60%_40%_55%_45%] blur-[1px] rotate-[45deg]"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-4 h-4 bg-[#ffff66]/75 rounded-[45%_55%_40%_60%] blur-[1px] rotate-[-30deg]"></div>
-        <div className="absolute top-1/2 right-1/4 w-5 h-5 bg-purple-400/70 rounded-[55%_45%_60%_40%] blur-[1px] rotate-[20deg]"></div>
-        <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-[#ffff66]/70 rounded-[40%_60%_45%_55%] blur-[1px] rotate-[-25deg]"></div>
+        <div className="absolute top-1/4 right-1/2 w-6 h-6 bg-purple-400/75 rounded-[60%_40%_55%_45%] blur-[1px] rotate-[45deg] animate-float-ink [animation-delay:0.5s]"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-4 h-4 bg-[#ffff66]/75 rounded-[45%_55%_40%_60%] blur-[1px] rotate-[-30deg] animate-float-ink [animation-delay:3.5s]"></div>
+        <div className="absolute top-1/2 right-1/4 w-5 h-5 bg-purple-400/70 rounded-[55%_45%_60%_40%] blur-[1px] rotate-[20deg] animate-float-ink [animation-delay:4.5s]"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-3 h-3 bg-[#ffff66]/70 rounded-[40%_60%_45%_55%] blur-[1px] rotate-[-25deg] animate-float-ink [animation-delay:2.8s]"></div>
       </div>
 
       {/* メインコンテンツ */}
